@@ -1,0 +1,26 @@
+<div class="collapse">
+  <div class="header">
+    <span>{{ titulo }}</span>
+    <span class="material-symbols-outlined" (click)="abrirFechar(id)">
+      expand_more
+    </span>
+  </div>
+  <div id="{{ id }}" class="body" style="display: none">
+    <div *ngIf="lista?.length > 0, else semDados" >
+      <div class="row" *ngFor="let i of lista">
+        <div class="row" *ngIf="i?.name && i?.value">
+          <span class="title">{{ i?.name }}:</span>
+          <span class="value">{{ i?.value }}</span>
+        </div>
+        <div class="row" *ngIf="i?.name && !i?.value">
+          <span class="title">{{ i?.name }}</span>
+        </div>
+      </div>
+    </div>
+    <ng-template #semDados>
+      <div>
+        ...
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<section class="container">
+  <div class="card">
+    <img src="{{ pokemon?.thumb }}" alt="Imagem do pokemon" class="thumb" *ngIf="pokemon?.thumb !== 'nao-encontrado'">
+    <img src="/assets/imagens/pokeball.png" alt="Imagem do pokemon" class="thumb" *ngIf="pokemon?.thumb === 'nao-encontrado'">
+  </div>
+  <div class="info">
+    <div class="bloco">
+      <div class="row">
+        <span class="title">Nº:</span>
+        <span class="value">{{ pokemon?.id }}</span>
+      </div>
+      <div class="row">
+        <span class="title">Nome:</span>
+        <span class="value">{{ pokemon?.name }}</span>
+      </div>
+    </div>
+    <div class="bloco">
+      <div class="row">
+        <span class="title">Altura:</span>
+        <span class="value">{{ pokemon?.height }}</span>
+      </div>
+      <div class="row">
+        <span class="title">Peso:</span>
+        <span class="value">{{ pokemon?.weight }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="grafic">
+    <div id="chart" class="chart">
+      <apx-chart
+        [series]="chartOptions?.series"
+        [chart]="chartOptions?.chart"
+        [xaxis]="chartOptions?.xaxis"
+      ></apx-chart>
+    </div>
+  </div>
+  <collapse [id]="'types'" [titulo]="'Tipos'" [lista]="pokemon?.types"></collapse>
+  <collapse [id]="'abilities'" [titulo]="'Habilidades'" [lista]="pokemon?.abilities"></collapse>
+  <collapse [id]="'moves'" [titulo]="'Movimentos'" [lista]="pokemon?.moves"></collapse>
+  <collapse [id]="'games'" [titulo]="'Jogos'" [lista]="pokemon?.games"></collapse>
+  <div class="botoes">
+    <button routerLink="/listar" mat-flat-button color="warn">
+      Voltar
+    </button>
+  </div>
+</section>

@@ -1,4 +1,15 @@
-# PokedexAngular
+# Pokedex Angular
+
+Aplicação usando Framework Angular e API do Pokemon PokeApi.
+
+### Lista
+![home](/listar.png)
+
+### Detalhe
+![home](/detalhe.png)
+
+
+## Referências Para o Framework Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
 
